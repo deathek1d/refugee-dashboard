@@ -1,0 +1,135 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    color: black;
+    background-color: #f8f8f8;
+  }
+/* wanted the font to be han chinese just never worked for some reason??, as for why chinese idk looks cool, urdu was second*/
+  .tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  
+  .controls {
+    position: sticky;
+    top: 0;
+    background: #f8f8f8;
+    z-index: 100;
+    /* use  border-bottom: 1px solid if needed idk */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    gap: 1.3rem;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px auto;
+    max-width: 970px;
+  }
+  
+  
+  .controlinput {
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    min-width: 200px;
+  }
+  
+  .controlinput:hover,
+  .controlinput:focus {
+    border-color: steelblue;
+  }
+  
+ 
+  .controlinput[type="range"] {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ /* staraight waffle im hoping its right*/
+  .controlinput[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: steelblue;
+    border: 2px solid white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .controlinput[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: steelblue;
+    border: 2px solid white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+
+  #chartcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    max-width: 915px;
+    margin: 20px auto;
+
+  }
+  
+  #treemap {
+    width: 100%;
+    max-width: 900px; 
+    margin-left: 70px ;
+  }
+
+  #barchart {
+    width: 100%;
+    max-width: 900px; 
+    max-width: 915px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+.desc {
+    max-width: 915px;
+    margin: 20px auto;
+    line-height: 1.6;
+    font-weight: 300; 
+    font-size: 15px;
+    color: #444;
+  }
+.topd {
+    max-width: 915px;
+    margin: 20px auto;
+    line-height: 1.6;
+    color: #444;
+    text-align: left;
+  }  
+
+  .linec {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    margin-right: 160px;
+  }
+ 

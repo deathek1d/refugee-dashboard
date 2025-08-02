@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Refugee Dashboard using D3.js</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h2 class="topd">Top Refugee & Asylum Seeker Populations</h2>
+  <p class="desc">By Suhail Parkar · June 2025</p>
+  <p class="desc">
+    We visualize global refugee and asylum seeker populations from 2023 and 2024, using two popular chart types: a treemap and a horizontal stacked bar chart. Each chart aims to represent the same data but in different ways. Which one gives you the bigger picture?
+  </p>
+
+  <div class="controls">
+    <label for="yearselect">Select Year:</label>
+    <select id="yearselect" class="controlinput"></select>
+
+    <label for="refugeeslider">Minimum Total Refugees:</label>
+    <input type="range" id="refugeeslider" class="controlinput" min="0" step="1000" />
+    <span id="slidervalue">0</span>
+  </div>
+
+  <div id="chartcontainer">
+    <h3 class="topd">Tree Map</h3>
+    <div id="treemap"></div>
+    <p class="desc">
+      Treemaps use area size to show total volume, fitting many countries into a compact rectangle. This gives a quick visual impression of scale, where larger boxes dominate attention.
+      It's a powerful tool for showing all data at once, especially when screen space is limited. But smaller countries become tiny squares readable only through tooltips, not labels.
+      Also, human eyes are less effective at comparing areas than lengths, so it's harder to judge small differences between countries with similar totals.
+    </p>
+
+    <h3 class="topd">Bar Chart</h3>
+    <div id="barchart"></div>
+    <p class="desc">
+      Bar charts are excellent for precise comparisons. Countries are ranked top-down by total refugee and asylum seeker count, making it immediately obvious which countries contribute the most.
+      The use of two colors (e.g., blue for refugees, orange for asylum seekers) within each bar makes it easy to compare not just totals, but proportional breakdowns.
+      However, once we go beyond the top 10 or 20 countries, the chart becomes long or scrollable, limiting the overview of all contributors.
+    </p>
+  </div>
+
+  <h3 class="topd">Line Chart</h3>
+  <div id="linechart" class="linec">
+    <h3 class="topd">Refugees & Asylum Seekers (2023–2024)</h3>
+  </div>
+  <p class="desc">
+    This animated line chart visualizes the annual number of refugees and asylum seekers arriving in Australia, Canada, France, Italy, and the United States from 2023 to 2024.
+    Each country is represented by a distinct pair of lines—one for refugees and one for asylum seekers—providing a clear view of their respective trends over time.
+  </p>
+  <p class="desc">
+    Due to the wide variation in values between countries (e.g., the U.S. receiving over 80,000 individuals, while others remain below 20,000), a logarithmic (log) scale was applied to the vertical axis.
+    This transformation helps compress large differences in values, ensuring that lower value countries are still visually distinct and not overshadowed. It allows for a more meaningful comparison across countries without sacrificing visibility or interpretability.
+  </p>
+
+  <div id="tooltip" class="tooltip"></div>
+  <div id="loading">Loading...</div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="script.js"></script>
+
+  <div>
+    <h3 class="topd">Data and Methodology</h3>
+    <p class="desc">
+        The data is publicly accessible on 
+        <a href="https://gist.github.com/deathek1d/2ac9b53548f6fb1897bb7e305a0555d4" target="_blank" rel="noopener noreferrer">
+          GitHub</a>. Preparing data fit for analysis required use of SQL. The visualizations were created using JavaScript's D3 library.
+      </p>
+      
+  </div>
+
+</body>
+</html>
